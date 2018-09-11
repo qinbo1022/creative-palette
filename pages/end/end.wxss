@@ -1,0 +1,60 @@
+/* pages/question/question.wxss */
+.bg-full{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}
+.jielun{
+  position: absolute;
+  top:37%;
+  left:19%;
+  width: 66%;
+  font-size: 14px;
+}
+.aboutCY{
+  position: absolute;
+  top:55%;
+  left:24%;
+  width: 66%;
+  color: black;
+  font-size: 18rpx;
+}
+.aboutSH{
+  position: absolute;
+  top:60%;
+  left:24%;
+  width: 66%;
+  color: black;
+  font-size: 18rpx;
+}
+
+.aboutYSJ{
+ position: absolute;
+  top:65%;
+  left:24%;
+  width: 66%;
+  color: black;
+  font-size: 18rpx;
+}
+
+.gamut{
+ position: absolute;
+  top:27%;
+  left:19%;
+  width: 66%;
+  font-size: 18px;
+}
+.cmky{
+position: absolute;
+  top:31%;
+  left:19%;
+  width: 66%;
+  font-size: 14px;
+}
+.rgb{
+ position: absolute;
+  top:34%;
+  left:19%;
+  width: 66%;
+  font-size: 14px;
+}

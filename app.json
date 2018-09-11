@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/start/start",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/question/question",
+    "pages/question2/question2",
+    "pages/end/end"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "人格代表色",
+    "navigationBarTextStyle":"black"
+  }
+}

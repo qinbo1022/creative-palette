@@ -1,0 +1,8 @@
+<image src='../../img/end1.jpg' class="bg-full" />
+<view class="jielun">{{jielun}}</view>
+<view class="aboutCY">{{aboutCY}}</view>
+<view class="aboutSH">{{aboutSH}}</view>
+<view class="aboutYSJ">{{aboutYSJ}}</view>
+<view class="gamut" style="color:{{RGB16}}">{{gamut}}</view>
+<view class="cmky">{{CMKY}}</view>
+<view class="rgb">{{RGB}}</view>

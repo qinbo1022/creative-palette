@@ -1,0 +1,10 @@
+<image src='../../img/question1.jpg' class="bg-full" />
+<view class="indexNum">{{No}}
+  <view class="question">{{question}}
+    <radio-group bindchange="changeItem">
+      <label style="display: flex" wx:for-items="{{anwser}}" wx:key="anwserItem">
+        <radio value="{{item.item}}" />{{item.item}}. {{item.anwserItem}}
+      </label>
+    </radio-group>
+  </view>
+</view>
