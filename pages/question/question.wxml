@@ -1,9 +1,9 @@
-<image src='../../img/question1.jpg' class="bg-full" />
-<view class="indexNum">{{No}}
-  <view class="question">{{question}}
-    <radio-group bindchange="changeItem">
+<image src='http://t1.aixinxi.net/o_1cnnu68fr1f0n1so5r0nst2upa.jpg-j.jpg' class="bg-full" />
+<view class="indexNum">
+  <view class="question">
+    <radio-group bindchange="changeItem" class="Qeitems">
       <label style="display: flex" wx:for-items="{{anwser}}" wx:key="anwserItem">
-        <radio value="{{item.item}}" />{{item.item}}. {{item.anwserItem}}
+        <view class="actual"><radio value="{{item.item}}" />{{item.item}}。{{item.anwserItem}}</view>
       </label>
     </radio-group>
   </view>

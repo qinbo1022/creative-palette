@@ -5,23 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    No: "02",
-    question: "在家吃饭时，发现桌上出现小污渍，你会怎么做？",
+    No: "01",
+    question: "走在路上，发现地上有一滩水，你会怎么做？",
     anwser: [{
       item: "A",
-      anwserItem: "用湿纸巾擦拭干净",
+      anwserItem: "拿出手机拍摄倒影照片",
       color: ['1', '2']
     }, {
       item: "B",
-      anwserItem: "在污渍上倒点水，观察污渍晕开",
+      anwserItem: "将旁边叶子当作小船，投入水中",
       color: ['3', '6']
     }, {
       item: "C",
-      anwserItem: "用筷子沾酱，开始在桌上画画",
+      anwserItem: "若无其事的走过水滩",
       color: ['4', '5']
     }, {
       item: "D",
-      anwserItem: "当做没看见，继续吃饭",
+      anwserItem: "观察自己的水面倒影",
       color: ['7', '8']
     }],
   },
@@ -29,19 +29,19 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
-    //1：紫 2：蓝 3：青 4：绿 5：黄 6：橘 7：红 8：黑 9：白
+    //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
+      colorWeight1 = "5";
+      colorWeight2 = "1";
+    } else if (currentItem === 'B') {
+      colorWeight1 = "4";
+      colorWeight2 = "9";
+    } else if (currentItem === 'C') {
+      colorWeight1 = "3";
+      colorWeight2 = "8";
+    } else if (currentItem === 'D') {
       colorWeight1 = "2";
       colorWeight2 = "7";
-    } else if (currentItem === 'B') {
-      colorWeight1 = "1";
-      colorWeight2 = "6";
-    } else if (currentItem === 'C') {
-      colorWeight1 = "9";
-      colorWeight2 = "5";
-    } else if (currentItem === 'D') {
-      colorWeight1 = "8";
-      colorWeight2 = "4";
     }
     wx.getStorage({
       key: 'colorList',
@@ -54,7 +54,7 @@ Page({
           data: colorList,
           success: function() {
             wx.navigateTo({
-              url: '../question3/question3',
+              url: '../question6/question6'
             })
           }
         })

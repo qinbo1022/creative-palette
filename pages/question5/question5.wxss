@@ -7,9 +7,9 @@
 
 .Qeitems{
   position: absolute;
-  top:59%;
-  left:15%;
+  top:26%;
+  left:5%;
 }
 .actual{
-  opacity:0.6;
+  opacity:0.5;
 }

@@ -7,9 +7,13 @@
 
 .Qeitems{
   position: absolute;
-  top:59%;
-  left:15%;
+  top:33%;
+  left:3%;
 }
 .actual{
   opacity:0.6;
+}
+.blockdiv{
+  width: 100%;
+  height: 4px;
 }

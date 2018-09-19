@@ -1,21 +1,14 @@
 /* pages/question/question.wxss */
 .bg-full{
   width: 100%;
-  height: 0%;
+  height: 100%;
   background-size: 100% 100%;
 }
-.bg_name{
+.Qeitems{
   position: absolute;
-  top:78%;
-  left:19%;
-  font-size: 21px;
-  color:white;
-  text-align: center;
+  top:28%;
+  left:10%;
 }
-.btn_start{
-  position: absolute;
-  top:86%;
-  left:34%;
-  opacity:0;
-  width: 100px;
+.actual{
+  opacity:0.6;
 }

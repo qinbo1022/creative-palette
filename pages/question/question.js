@@ -29,19 +29,19 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
-    //1：紫 2：蓝 3：青 4：绿 5：黄 6：橘 7：红 8：黑 9：白
+    //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
-      colorWeight1 = "6";
-      colorWeight2 = "2";
+      colorWeight1 = "2";
+      colorWeight2 = "7";
     } else if (currentItem === 'B') {
-      colorWeight1 = "5";
-      colorWeight2 = "1";
+      colorWeight1 = "1";
+      colorWeight2 = "6";
     } else if (currentItem === 'C') {
-      colorWeight1 = "4";
-      colorWeight2 = "9";
+      colorWeight1 = "9";
+      colorWeight2 = "5";
     } else if (currentItem === 'D') {
-      colorWeight1 = "3";
-      colorWeight2 = "8";
+      colorWeight1 = "8";
+      colorWeight2 = "4";
     }
     wx.getStorage({
       key: 'colorList',
@@ -54,7 +54,7 @@ Page({
           data: colorList,
           success: function() {
             wx.navigateTo({
-              url: '../question2/question2',
+              url:'../question2/question2'
             })
           }
         })

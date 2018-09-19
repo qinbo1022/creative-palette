@@ -7,8 +7,8 @@
 
 .Qeitems{
   position: absolute;
-  top:59%;
-  left:15%;
+  top:33%;
+  left:31%;
 }
 .actual{
   opacity:0.6;
