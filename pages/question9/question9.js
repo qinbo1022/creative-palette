@@ -1,4 +1,5 @@
 // pages/question/question.js
+
 Page({
 
   /**
@@ -53,8 +54,6 @@ Page({
           key: 'colorList',
           data: colorList,
           success: function() {
-            console.log(getCurrentPages());
-            console.loge(getCurrentPages().pop());
             wx.reLaunch({
               url: '../end/end'
             })

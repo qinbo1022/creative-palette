@@ -11,7 +11,7 @@
   left:3%;
 }
 .actual{
-  opacity:0.6;
+  opacity:0;
 }
 .blockdiv{
   width: 100%;

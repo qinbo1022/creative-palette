@@ -11,5 +11,5 @@
   left:5%;
 }
 .actual{
-  opacity:0.5;
+  opacity:0;
 }

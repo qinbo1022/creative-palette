@@ -6,22 +6,22 @@ Page({
    */
   data: {
     No: "01",
-    question: "桌上有好几张没收好的纸巾，你会怎么做？",
+    question: "走在路上发现了一朵小花，你会怎么做？",
     anwser: [{
       item: "A",
-      anwserItem: "折成整规的四方形，整齐叠好",
+      anwserItem: "摘下小花，用力闻",
       color: ['1', '2']
     }, {
       item: "B",
-      anwserItem: "折成纸飞机，发射升空",
+      anwserItem: "拍照分享朋友圈",
       color: ['3', '6']
     }, {
       item: "C",
-      anwserItem: "折成各种形状，在桌上盖房子",
+      anwserItem: "拿出紙筆，画出心中之花",
       color: ['4', '5']
     }, {
       item: "D",
-      anwserItem: "撕碎，自由排列成各种形状",
+      anwserItem: "靠近仔细看",
       color: ['7', '8']
     }],
   },
@@ -54,7 +54,7 @@ Page({
           data: colorList,
           success: function() {
             wx.navigateTo({
-              url:'../question2/question2'
+              url: '../question2/question2'
             })
           }
         })
