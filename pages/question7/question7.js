@@ -6,6 +6,7 @@ Page({
    */
   data: {
     No: "01",
+    radioCheckVal: 0,
     question: "画画或写字时，铅笔突然断了，你会怎么做？",
     anwser: [{
       item: "A",
@@ -29,6 +30,11 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
+
+    this.setData({
+      radioCheckVal: currentItem
+    });
+
     //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
       colorWeight1 = "7";

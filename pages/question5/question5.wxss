@@ -10,6 +10,16 @@
   top:26%;
   left:5%;
 }
-.actual{
+.checkSelect{
+  float:left;
   opacity:0;
+}
+.option{
+  float: left;
+  color: #1350a3;
+  font-weight: 600;
+  font-size: 17px;
+}
+.actual{
+  color:#fef102;
 }

@@ -6,6 +6,7 @@ Page({
    */
   data: {
     No: "01",
+    radioCheckVal: 0,
     question: "在美术馆观看展览时，发现有趣却看不懂的作品，你会怎么做？",
     anwser: [{
       item: "A",
@@ -29,6 +30,11 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
+
+    this.setData({
+      radioCheckVal: currentItem
+    });
+
     //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
       colorWeight1 = "4";

@@ -5,12 +5,12 @@
     <view class="ending">
       <view class="endColor">{{ending}}</view>
       <view class="gamut">{{gamut}}</view>
-      <view class="cmky">{{CMYK}}</view>
-      <view class="rgb">{{RGB}}</view>
+      <view class="cmky">CMYK：{{CMYK}}</view>
+      <view class="rgb">RGB：{{RGB}}</view>
     </view>
     <view class="about">
-      <view class="aboutCY">{{aboutCreative}}</view>
-      <view class="aboutSH">{{aboutLife}}</view>
-      <view class="aboutYSJ">{{aboutArtist}}</view>
+      <view class="aboutCY"><view class="aboutTitle">『关于创意』</view>{{aboutCreative}}</view>
+      <view class="aboutSH"><view class="aboutTitle">『关于生活』</view>{{aboutLife}}</view>
+      <view class="aboutYSJ"><view class="aboutTitle">『关于艺术家』</view>{{aboutArtist}}</view>
     </view>
 </view>

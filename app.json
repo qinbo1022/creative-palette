@@ -1,6 +1,5 @@
 {
   "pages":[
-    
     "pages/start/start",
     "pages/index/index",
     "pages/logs/logs",
@@ -14,12 +13,11 @@
     "pages/question8/question8",
     "pages/question9/question9",
     "pages/end/end"
-    
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "人格代表色",
+    "navigationBarTitleText": "创作人格代表色",
     "navigationBarTextStyle":"black"
   }
 }

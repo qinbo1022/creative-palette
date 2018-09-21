@@ -111,7 +111,7 @@ function getTone(num) {
   var resultJson = {};
   if (num == '1') {
     var random = util.RandomNumBoth(0, 62);
-    resultJson["colorBlock"] = color_purple.purple[random];
+    resultJson["colorBlock"] = color_purple.pruple[random];
     resultJson["ending"] = tone.tone.purple;
     resultJson["url"] = urlList.urlList.purple;
   } else if (num == '2') {

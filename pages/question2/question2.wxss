@@ -7,8 +7,19 @@
 .Qeitems{
   position: absolute;
   top:28%;
-  left:10%;
+  left:8%;
+}
+
+.checkSelect{
+  float:left;
+  opacity:0;
+}
+.option{
+  float: left;
+  color: #1350a3;
+  font-weight: 600;
+  font-size: 17px;
 }
 .actual{
-  opacity:0;
+  color:#fef102;
 }

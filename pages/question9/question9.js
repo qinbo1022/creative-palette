@@ -7,10 +7,11 @@ Page({
    */
   data: {
     No: "01",
+    radioCheckVal: 0,
     question: "假期只剩最后一天，工作/作业还没做完，你会怎么做？",
     anwser: [{
       item: "A",
-      anwserItem: "放弃挣扎，躺在床上祈祷明天停班/停课",
+      anwserItem: "放弃挣扎，躺在床上祈祷明天停课",
       color: ['1', '2']
     }, {
       item: "B",
@@ -22,7 +23,7 @@ Page({
       color: ['4', '5']
     }, {
       item: "D",
-      anwserItem: "『不小心』把水打翻到电脑/作业本上，只好放弃",
+      anwserItem: "『不小心』把水打翻到作业本上,只好放弃",
       color: ['7', '8']
     }],
   },
@@ -30,6 +31,11 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
+
+    this.setData({
+      radioCheckVal: currentItem
+    });
+
     //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
       colorWeight1 = "5";

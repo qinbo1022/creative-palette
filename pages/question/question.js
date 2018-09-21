@@ -6,29 +6,31 @@ Page({
    */
   data: {
     No: "01",
+    radioCheckVal:0,
     question: "走在路上发现了一朵小花，你会怎么做？",
     anwser: [{
       item: "A",
-      anwserItem: "摘下小花，用力闻",
-      color: ['1', '2']
+      anwserItem: "摘下小花，用力闻"
     }, {
       item: "B",
-      anwserItem: "拍照分享朋友圈",
-      color: ['3', '6']
+      anwserItem: "拍照分享朋友圈"
     }, {
       item: "C",
-      anwserItem: "拿出紙筆，画出心中之花",
-      color: ['4', '5']
+      anwserItem: "拿出纸笔，画出心中之花"
     }, {
       item: "D",
-      anwserItem: "靠近仔细看",
-      color: ['7', '8']
+      anwserItem: "靠近仔细看"
     }],
   },
   changeItem: function(e) {
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
+
+    this.setData({
+      radioCheckVal:currentItem
+    });
+
     //1：紫 2：蓝 3：棕 4：绿 5：黄 6：橘 7：红 8：灰 9：白
     if (currentItem === 'A') {
       colorWeight1 = "2";

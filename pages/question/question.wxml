@@ -1,9 +1,12 @@
-<image src='http://t1.aixinxi.net/o_1cnnu68fr1f0n1so5r0nst2upa.jpg-j.jpg' class="bg-full" />
+<image src='http://t1.aixinxi.net/o_1cntejnh9ejgqsq1glv196t196ka.png-w.jpg' class="bg-full" />
 <view class="indexNum">
   <view class="question">
     <radio-group bindchange="changeItem" class="Qeitems">
       <label style="display: flex" wx:for-items="{{anwser}}" wx:key="anwserItem">
-        <view class="actual"><radio value="{{item.item}}" />{{item.item}}。{{item.anwserItem}}</view>
+        <view class="actual">
+          <view class="checkSelect"><radio value="{{item.item}}" /></view>
+          <view class="option"><label class="{{radioCheckVal==item.item?'actual':''}}">{{item.item}}. {{item.anwserItem}}</label></view>
+        </view>
       </label>
     </radio-group>
   </view>

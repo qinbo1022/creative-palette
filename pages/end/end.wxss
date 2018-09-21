@@ -20,28 +20,33 @@
 }
 .aboutCY{
   position: absolute;
-  top:55%;
-  left:24%;
+  top:54%;
+  left:25%;
   width: 66%;
   color: black;
-  font-size: 18rpx;
+  font-size: 20rpx;
 }
 .aboutSH{
   position: absolute;
-  top:60%;
-  left:24%;
+  top:62%;
+  left:25%;
   width: 66%;
   color: black;
-  font-size: 18rpx;
+  font-size: 20rpx;
 }
 
 .aboutYSJ{
  position: absolute;
-  top:65%;
-  left:24%;
+  top:70%;
+  left:25%;
   width: 66%;
   color: black;
-  font-size: 18rpx;
+  font-size: 20rpx;
+}
+
+.aboutTitle{
+  margin-left: -30rpx;
+  font-weight: 600;
 }
 
 .gamut{
@@ -50,6 +55,8 @@
   left:19%;
   width: 66%;
   font-size: 18px;
+  font-weight: 700;
+  margin-left: 5px;
 }
 .cmky{
 position: absolute;

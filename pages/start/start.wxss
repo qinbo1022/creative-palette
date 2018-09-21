@@ -6,16 +6,19 @@
 }
 .bg_name{
   position: absolute;
-  top:78%;
-  left:19%;
-  font-size: 21px;
+  top:56%;
+  left:5%;
+  font-size: 25px;
   color:white;
   text-align: center;
+  height: 80px;
+  font-weight: 500px;
+  /* text-shadow: 2px 2px 2px gray; */
 }
 .btn_start{
   position: absolute;
-  top:86%;
-  left:34%;
+  top:77%;
+  left:15%;
   opacity:0;
-  width: 100px;
+  width: 200px;
 }

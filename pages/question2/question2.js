@@ -6,6 +6,7 @@ Page({
    */
   data: {
     No: "02",
+    radioCheckVal: 0,
     question: "在家吃饭时，发现桌上出现小污渍，你会怎么做？",
     anwser: [{
       item: "A",
@@ -29,6 +30,11 @@ Page({
     var currentItem = e.detail.value;
     var colorWeight1 = "";
     var colorWeight2 = "";
+
+    this.setData({
+      radioCheckVal: currentItem
+    });
+
     //1：紫 2：蓝 3：青 4：绿 5：黄 6：橘 7：红 8：黑 9：白
     if (currentItem === 'A') {
       colorWeight1 = "2";
