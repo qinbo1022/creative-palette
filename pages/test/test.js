@@ -27,7 +27,7 @@ Page({
    */
   onLoad: function(options) {
     wx.showLoading({
-      title: '计算你专属色...',
+      title: '生成专属色...',
     })
     var myCanvasWidth = 0;
     var myCanvasHeight = 0;
@@ -88,7 +88,7 @@ Page({
       ctx.setTextAlign('left') // 文字居中
       ctx.setFillStyle('#000000') // 文字颜色：黑色
       ctx.setFontSize(15) // 文字字号：22px
-      canvasTextAutoLine(tone.ending.replaceThis("○○○", name), myCanvasWidth / 4.9, myCanvasHeight / 2.5, 15, ctx,320)
+      changeline(ctx,tone.ending.replaceThis("○○○", name),16, myCanvasWidth / 4.9, myCanvasHeight / 2.5, 16)
       // // 小程序码
       // const qrImgSize = 180
       // ctx.drawImage(res[1].path, (600 - qrImgSize) / 2, 530, qrImgSize, qrImgSize)
@@ -104,9 +104,9 @@ Page({
       ctx.setTextAlign('left') // 文字居中
       ctx.setFillStyle('#000000') // 文字颜色：黑色
       ctx.setFontSize(11) // 文字字号：22px
-      canvasTextAutoLine(aboutlife.replaceThis("○○○", name), myCanvasWidth / 4.4, myCanvasHeight / 1.66, 15, ctx,360)
-      canvasTextAutoLine(aboutcreative.replaceThis("○○○", name), myCanvasWidth / 4.4, myCanvasHeight / 1.48, 15, ctx, 360)
-      canvasTextAutoLine(aboutartist.replaceThis("○○○", name), myCanvasWidth / 4.4, myCanvasHeight / 1.31, 15, ctx, 360)
+      changeline(ctx,aboutlife.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.68, 15)
+      changeline(ctx,aboutcreative.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.48, 15)
+      changeline(ctx,aboutartist.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.32, 15)
 
       ctx.stroke()
       ctx.draw()
@@ -242,27 +242,7 @@ function getTone(num) {
   return resultJson;
 }
 
-/****绘制自动换行的字符串****/
-function drawText(t, x, y, w, context) {
-  var chr = t.split("");
-  var temp = "";
-  var row = [];
-  // context.font = "20px Arial";
-  // context.fillStyle = "black";
-  // context.textBaseline = "middle";
-  for (var a = 0; a < chr.length; a++) {
-    if (context.measureText(temp).width < w) {;
-    } else {
-      row.push(temp);
-      temp = "";
-    }
-    temp += chr[a];
-  }
-  row.push(temp);
-  for (var b = 0; b < row.length; b++) {
-    context.fillText(row[b], x, y + (b + 1) * 20);
-  }
-}
+
 
 function colorRGB2Hex(color) {
   var rgb = color.split(',');
@@ -289,4 +269,9 @@ function canvasTextAutoLine(str, initX, initY, lineHeight, ctx, canvasWidth) {
       ctx.fillText(str.substring(lastSubStrIndex, i + 1), initX, initY);
     }
   }
+}
+function changeline(ctx,str,num,initx,inity,lineHeight){
+  // var word = ctx.measureText(str[i]).width;
+  ctx.fillText(str.substring(0, num), initx, inity);
+  ctx.fillText(str.substring(num, str.length), initx, inity + lineHeight);
 }
