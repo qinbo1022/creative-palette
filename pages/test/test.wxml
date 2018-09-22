@@ -1,0 +1,1 @@
+<canvas class='canvasInfo' canvas-id="shareCanvas" style='width:{{canvasWidth}}px; height:{{canvasHeight}}px;' bindlongtap="createNewImg"></canvas>

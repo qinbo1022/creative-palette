@@ -1,4 +1,4 @@
-<image src='http://t1.aixinxi.net/o_1cntepr054od1to81dmro143fia.png-w.jpg' class="bg-full" />
+<image src='http://t1.aixinxi.net/o_1cntepr054od1to81dmro143fia.png-j.jpg' class="bg-full" />
 <view class="indexNum">
   <view class="question">
     <radio-group bindchange="changeItem" class="Qeitems">

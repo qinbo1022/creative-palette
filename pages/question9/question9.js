@@ -61,7 +61,7 @@ Page({
           data: colorList,
           success: function() {
             wx.reLaunch({
-              url: '../end/end'
+              url: '../test/test'
             })
           }
         })

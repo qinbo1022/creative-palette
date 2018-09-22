@@ -1,0 +1,6 @@
+/* pages/test/test.wxss */
+.save{
+  position: absolute;
+  top:90%;
+  left: 30%;
+}
