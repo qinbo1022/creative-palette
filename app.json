@@ -1,6 +1,6 @@
 {
   "pages":[
-    
+    "pages/test/test",
     "pages/start/start",
     "pages/index/index",
     "pages/logs/logs",
@@ -13,7 +13,7 @@
     "pages/question7/question7",
     "pages/question8/question8",
     "pages/question9/question9",
-    "pages/test/test",
+    
     "pages/end/end"
     
   ],

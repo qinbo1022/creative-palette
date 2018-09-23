@@ -1,13 +1,13 @@
 <canvas class='canvasInfo' canvas-id="shareCanvas" style='width:{{canvasWidth}}px; height:{{canvasHeight}}px;' bindlongtap="createNewImg">
 </canvas>
 <!--弹窗-->
-<view class="showtips">
+<cover-view class="showtips">
   长按保存图片到相册
-  <view>与朋友分享你的色票</view>
-</view>
-<view class="modal-content" wx:if="{{showModal}}">
-  <view class="modal-box" style='background-color:#000'></view>
-  <image class="modal-mask" src="img/alert.png" />
-  <view class="hideBtn" bindtap='hideModal'></view>
-</view>
+  <cover-view>与朋友分享你的色票</cover-view>
+</cover-view>
+<cover-view class="showtips2" wx:if="{{showModal}}">
+<cover-view class="modal-box" style='background-color:#000'></cover-view>
+  <cover-image class="modal-mask" src="img/alert.png"></cover-image>
+  <cover-view class="hideBtn" bindtap='hideModal'></cover-view>
+</cover-view>
 
