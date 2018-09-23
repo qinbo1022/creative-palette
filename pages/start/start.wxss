@@ -7,13 +7,15 @@
 .bg_name{
   position: absolute;
   top:56%;
-  left:5%;
-  font-size: 25px;
+  left:0%;
+  font-size: 30px;
   color:white;
   text-align: center;
+  /* margin-left: 3%; */
+  width:80%;
   height: 80px;
-  font-weight: 500px;
-  /* text-shadow: 2px 2px 2px gray; */
+  font-weight: 700;
+  /* text-shadow: 1px 1px 1px gray; */
 }
 .btn_start{
   position: absolute;
@@ -21,4 +23,13 @@
   left:15%;
   opacity:0;
   width: 200px;
+}
+.hoderStyle{
+  font-size: 30px;
+  color:white;
+  text-align: center;
+  height: 80px;
+  width:100%;
+  font-weight: 700;
+  /* text-shadow: 2px 2px 2px gray; */
 }

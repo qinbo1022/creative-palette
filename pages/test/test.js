@@ -19,9 +19,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showModal: false
   },
-
+  drawText: function(obj) {
+    var ctx = obj.ctx1;
+    ctx.save();
+    ctx.setFillStyle(obj.color);
+    ctx.setFontSize(obj.size);
+    ctx.setTextAlign(obj.align);
+    ctx.setTextBaseline(obj.baseline);
+    if (obj.bold) {
+      ctx.fillText(obj.text, obj.x, obj.y - obj.particle);
+      ctx.fillText(obj.text, obj.x - obj.particle, obj.y);
+    }
+    ctx.fillText(obj.text, obj.x, obj.y);
+    if (obj.bold) {
+      ctx.fillText(obj.text, obj.x, obj.y + obj.particle);
+      ctx.fillText(obj.text, obj.x + obj.particle, obj.y);
+    }
+    ctx.restore();
+  },
+  hideModal: function() {
+    this.setData({
+      showModal: false
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -53,61 +75,157 @@ Page({
     })
 
     const wxGetImageInfo = promisify.promisify(wx.getImageInfo)
-
     Promise.all([
       wxGetImageInfo({
         src: tone.url
       }),
       wxGetImageInfo({
-        src: 'http://t1.aixinxi.net/o_1cnr92p7dc7s1qsmvg2ldvjo3a.png-j.jpg'
+        src: 'img/erweima.jpg'
       })
     ]).then(res => {
+
+
       const ctx = wx.createCanvasContext('shareCanvas')
-      ctx.setFillStyle(colorRGB2Hex(tone.colorBlock.RGB))
-      console.log(colorRGB2Hex(tone.colorBlock.RGB));
+      var colorChange = "rgb(" + tone.colorBlock.RGB + ")";
+      ctx.setFillStyle(colorChange)
       ctx.fillRect(0, 0, myCanvasWidth, myCanvasHeight)
       // 底图
-      ctx.drawImage(res[0].path, 0, 0, myCanvasWidth, myCanvasHeight)
+      ctx.drawImage("../../" + res[0].path, 0, 0, myCanvasWidth, myCanvasHeight)
+      let title = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 3.5,
+        color: '#000000',
+        size: 22,
+        align: 'left',
+        baseline: 'normal',
+        text: name + "的代表色",
+        bold: true,
+        ctx1: ctx,
+        particle: 0.5
+      };
+      let gamut = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 3.1,
+        color: '#000000',
+        size: 20,
+        align: 'left',
+        baseline: 'normal',
+        text: tone.colorBlock.gamut,
+        bold: true,
+        ctx1: ctx,
+        particle: 0.5
+      };
+      let cmyk = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 2.8,
+        color: '#000000',
+        size: 15,
+        align: 'left',
+        baseline: 'normal',
+        text: "CMYK：" + tone.colorBlock.CMYK,
+        bold: true,
+        ctx1: ctx,
+        particle: 0.1
+      };
+      let rgb = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 2.6,
+        color: '#000000',
+        size: 15,
+        align: 'left',
+        baseline: 'normal',
+        text: "RGB：" + tone.colorBlock.RGB,
+        bold: true,
+        ctx1: ctx,
+        particle: 0.1
+      };
+      // gamut
+      // ctx.setTextAlign('center') // 文字居中
+      // ctx.setFillStyle('#000000') // 文字颜色：黑色
+      // ctx.setFontSize(22) // 文字字号：22px
+      // ctx.fillText(tone.colorBlock.gamut, myCanvasWidth / 3.5, myCanvasHeight / 3.4)
+      this.drawText(title);
+      this.drawText(gamut);
+      this.drawText(cmyk);
+      this.drawText(rgb);
+      //CMYK
+      // ctx.setTextAlign('left') // 文字居中
+      // ctx.setFillStyle('#000000') // 文字颜色：黑色
+      // ctx.setFontSize(15) // 文字字号：22px
+      // ctx.fillText("CMYK：" + tone.colorBlock.CMYK, myCanvasWidth / 4.9, myCanvasHeight / 3)
 
-      // 颜色
-      ctx.setTextAlign('center') // 文字居中
-      ctx.setFillStyle('#000000') // 文字颜色：黑色
-      ctx.setFontSize(22) // 文字字号：22px
-      ctx.fillText(tone.colorBlock.gamut, myCanvasWidth / 3.5, myCanvasHeight / 3.4)
 
+      //RGB
+      // ctx.setTextAlign('left') // 文字居中
+      // ctx.setFillStyle('#000000') // 文字颜色：黑色
+      // ctx.setFontSize(15) // 文字字号：22px
+      // ctx.fillText("RGB：" + tone.colorBlock.RGB, myCanvasWidth / 4.9, myCanvasHeight / 2.75)
+
+
+      //ending
       ctx.setTextAlign('left') // 文字居中
       ctx.setFillStyle('#000000') // 文字颜色：黑色
       ctx.setFontSize(15) // 文字字号：22px
-      ctx.fillText("CMYK：" + tone.colorBlock.CMYK, myCanvasWidth / 4.9, myCanvasHeight / 3)
+      changeline(ctx, tone.ending.replaceThis("○○○", name), 16, myCanvasWidth / 4.9, myCanvasHeight / 2.4, 16)
 
-      ctx.setTextAlign('left') // 文字居中
-      ctx.setFillStyle('#000000') // 文字颜色：黑色
-      ctx.setFontSize(15) // 文字字号：22px
-      ctx.fillText("RGB：" + tone.colorBlock.RGB, myCanvasWidth / 4.9, myCanvasHeight / 2.75)
+      let aboutcy = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 1.75,
+        color: '#000000',
+        size: 15,
+        align: 'left',
+        baseline: 'normal',
+        text: "『关于创意』",
+        bold: true,
+        ctx1: ctx,
+        particle: 0.2
+      };
+      let aboutsh = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 1.53,
+        color: '#000000',
+        size: 15,
+        align: 'left',
+        baseline: 'normal',
+        text: "『关于生活』",
+        bold: true,
+        ctx1: ctx,
+        particle: 0.2
+      };
+      let aboutysj = {
+        x: myCanvasWidth / 4.9,
+        y: myCanvasHeight / 1.36,
+        color: '#000000',
+        size: 15,
+        align: 'left',
+        baseline: 'normal',
+        text: "『关于艺术家』",
+        bold: true,
+        ctx1: ctx,
+        particle: 0.2
+      };
+      this.drawText(aboutsh);
+      this.drawText(aboutcy);
+      this.drawText(aboutysj);
+      //aboutTitle
+      // ctx.setTextAlign('left') // 文字居中
+      // ctx.setFillStyle('#000000') // 文字颜色：黑色
+      // ctx.setFontSize(15) // 文字字号：22px
+      // ctx.fillText("『关于创意』", myCanvasWidth / 4.9, myCanvasHeight / 1.75)
+      // ctx.fillText("『关于生活』", myCanvasWidth / 4.9, myCanvasHeight / 1.53)
+      // ctx.fillText("『关于艺术家』", myCanvasWidth / 4.9, myCanvasHeight / 1.36)
 
-      ctx.setTextAlign('left') // 文字居中
-      ctx.setFillStyle('#000000') // 文字颜色：黑色
-      ctx.setFontSize(15) // 文字字号：22px
-      changeline(ctx,tone.ending.replaceThis("○○○", name),16, myCanvasWidth / 4.9, myCanvasHeight / 2.5, 16)
-      // // 小程序码
-      // const qrImgSize = 180
-      // ctx.drawImage(res[1].path, (600 - qrImgSize) / 2, 530, qrImgSize, qrImgSize)
-
-
-      ctx.setTextAlign('left') // 文字居中
-      ctx.setFillStyle('#000000') // 文字颜色：黑色
-      ctx.setFontSize(15) // 文字字号：22px
-      ctx.fillText("『关于创意』", myCanvasWidth / 4.9, myCanvasHeight / 1.75)
-      ctx.fillText("『关于生活』", myCanvasWidth / 4.9, myCanvasHeight / 1.53)
-      ctx.fillText("『关于艺术家』", myCanvasWidth / 4.9, myCanvasHeight / 1.36)
-
+      //aboutContent
       ctx.setTextAlign('left') // 文字居中
       ctx.setFillStyle('#000000') // 文字颜色：黑色
       ctx.setFontSize(11) // 文字字号：22px
-      changeline(ctx,aboutlife.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.68, 15)
-      changeline(ctx,aboutcreative.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.48, 15)
-      changeline(ctx,aboutartist.replaceThis("○○○", name),24, myCanvasWidth / 4.4, myCanvasHeight / 1.32, 15)
+      changeline(ctx, aboutlife.replaceThis("○○○", name), 24, myCanvasWidth / 4.4, myCanvasHeight / 1.68, 15)
+      changeline(ctx, aboutcreative.replaceThis("○○○", name), 24, myCanvasWidth / 4.4, myCanvasHeight / 1.48, 15)
+      changeline(ctx, aboutartist.replaceThis("○○○", name), 24, myCanvasWidth / 4.4, myCanvasHeight / 1.32, 15)
 
+      // 小程序码
+      const qrImgSize = 50
+      ctx.drawImage("../../" + res[1].path, myCanvasWidth / 1.55, myCanvasHeight / 13, qrImgSize, qrImgSize)
       ctx.stroke()
       ctx.draw()
       wx.hideLoading()
@@ -115,6 +233,7 @@ Page({
 
   },
   createNewImg: function() {
+    var that = this;
     const wxCanvasToTempFilePath = promisify.promisify(wx.canvasToTempFilePath)
     const wxSaveImageToPhotosAlbum = promisify.promisify(wx.saveImageToPhotosAlbum)
 
@@ -126,7 +245,12 @@ Page({
       })
     }).then(res => {
       wx.showToast({
-        title: '已保存到相册'
+        title: '已保存到相册',
+        success: function() {
+          that.setData({
+            showModal: true
+          })
+        }
       })
     })
   },
@@ -141,7 +265,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+
   },
 
   /**
@@ -242,18 +366,6 @@ function getTone(num) {
   return resultJson;
 }
 
-
-
-function colorRGB2Hex(color) {
-  var rgb = color.split(',');
-  var r = parseInt(rgb[0].split('(')[1]);
-  var g = parseInt(rgb[1]);
-  var b = parseInt(rgb[2].split(')')[0]);
-
-  var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-  return hex;
-}
-
 function canvasTextAutoLine(str, initX, initY, lineHeight, ctx, canvasWidth) {
   var lineWidth = 0;
   var lastSubStrIndex = 0;
@@ -270,7 +382,8 @@ function canvasTextAutoLine(str, initX, initY, lineHeight, ctx, canvasWidth) {
     }
   }
 }
-function changeline(ctx,str,num,initx,inity,lineHeight){
+
+function changeline(ctx, str, num, initx, inity, lineHeight) {
   // var word = ctx.measureText(str[i]).width;
   ctx.fillText(str.substring(0, num), initx, inity);
   ctx.fillText(str.substring(num, str.length), initx, inity + lineHeight);

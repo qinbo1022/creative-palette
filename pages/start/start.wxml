@@ -1,4 +1,4 @@
 
-  <image src='http://t1.aixinxi.net/o_1cnqcqmginr98uc1a9anl9123ta.jpg-j.jpg' class="bg-full" />
-  <input type='text' confirm-type="go" adjust-position="true" placeholder="请输入你的姓名" class="bg_name" placeholder-style='color:white' bindinput='voteTitle' />
+  <image src='../../img/start.jpg' class="bg-full" />
+  <input type='text' confirm-type="go" adjust-position="true" maxlength='7' placeholder="请输入你的姓名" class="bg_name"  placeholder-class='hoderStyle' bindinput='voteTitle' />
   <button class="btn_start" bindtap='start'>开始</button>
