@@ -1,10 +1,18 @@
-# Creative Personality Color
+<p align="center">
+  <img src="./docs/logo.png" alt="Creative Personality Color" width="140" />
+</p>
 
-> Discover the color that represents your creative soul.
+<h1 align="center">Creative Personality Color</h1>
+
+<p align="center">
+  <a href="./README.md">English</a> · <a href="./README-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <em>Discover the color that represents your creative soul.</em>
+</p>
 
 **Creative Personality Color** is a WeChat Mini Program that maps everyday choices to a curated spectrum of personality hues. Through a short, story-driven quiz, it reveals your dominant creative tone—complete with Chinese traditional color names, precise color values, and a personalized creative portrait.
-
-[中文文档](./README-CN.md)
 
 ---
 

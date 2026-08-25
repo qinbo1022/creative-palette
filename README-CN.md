@@ -1,10 +1,18 @@
-# 创作人格代表色
+<p align="center">
+  <img src="./docs/logo.png" alt="创作人格代表色" width="140" />
+</p>
 
-> 用色彩，丈量你的创作灵魂。
+<h1 align="center">创作人格代表色</h1>
+
+<p align="center">
+  <a href="./README.md">English</a> · <a href="./README-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <em>用色彩，丈量你的创作灵魂。</em>
+</p>
 
 **创作人格代表色** 是一款微信小程序：以情境问答为线索，将日常选择映射到精心编排的人格色系之中。短短数题之后，你会获得属于自己的创作主色——附带中国传统色名、精确色值，以及一份可分享的个性创作画像。
-
-[English](./README.md)
 
 ---
 
